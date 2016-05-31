@@ -1,0 +1,6 @@
+Evaluation PositionEvaluationCB (Board position, Integer player);
+ListArray<Moves> GetMovesCB (Board position, Integer player);
+Board MakeMoveCB (Board position, Integer player);
+<> AlphaBetaPruneAlgorithm (Board position, Integer player, 
+    PositionEvaluationCB, PECBvars, GetMovesCB, GMCBvars,
+    MakeMoveCB, MMCBvars);
