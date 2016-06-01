@@ -1,4 +1,4 @@
-package minchpy;
+package minchpy.entity;
 
 public class Evaluation {
 	
