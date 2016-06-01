@@ -1,6 +1,30 @@
-Evaluation PositionEvaluationCB (Board position, Integer player);
-ListArray<Moves> GetMovesCB (Board position, Integer player);
-Board MakeMoveCB (Board position, Integer player);
-<> AlphaBetaPruneAlgorithm (Board position, Integer player, 
-    PositionEvaluationCB, PECBvars, GetMovesCB, GMCBvars,
-    MakeMoveCB, MMCBvars);
+interface GenericCBS {
+	Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer);
+	List<Move> getMovesCB (Board currentPosition, Player currentPlayer);
+	Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move);
+}
+
+class GameCBS {
+
+}
+
+class ChessCBS extends GameCBS implements GenericCBS {
+	Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer) {
+		return null;
+	}
+	
+	List<Move> getMovesCB (Board currentPosition, Player currentPlayer) {
+		return null;
+	}
+	
+	Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move) {
+		return null;
+	}
+}
+
+class AlphaBetaPruneAlgorithm  {
+	
+	MoveEval alphaBetaPruneAlgorithm(GameCBS g, Board currentPosition, Depth depth, Player currentPlayer) {
+    	return null;
+	}
+}
