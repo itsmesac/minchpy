@@ -22,9 +22,9 @@ class ChessCBS extends GameCBS implements GenericCBS {
 	}
 }
 
-class AlphaBetaPruneAlgorithm  {
+class AlphaBetaPruningAlgorithm  {
 	
-	MoveEval alphaBetaPruneAlgorithm(GameCBS g, Board currentPosition, Depth depth, Player currentPlayer) {
+	MoveEval alphaBetaPruningAlgorithm(GameCBS g, Board currentPosition, Depth depth, Player currentPlayer) {
     	return null;
 	}
 }
