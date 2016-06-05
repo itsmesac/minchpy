@@ -28,3 +28,5 @@ class AlphaBetaPruningAlgorithm  {
     	return null;
 	}
 }
+
+1
