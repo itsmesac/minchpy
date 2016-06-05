@@ -1,5 +1,7 @@
 package minchpy.entity;
 
-public class GameCBS {
+import minchpy.api.GenericCBS;
+
+public abstract class GameCBS implements GenericCBS{
 	//TODO: implement GameCBS class
 }
