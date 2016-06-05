@@ -9,8 +9,8 @@ import minchpy.entity.Player;
 import minchpy.entity.State;
 
 public interface GenericCBS {
-	Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer);
-	List<Move> getMovesCB (Board currentPosition, Player currentPlayer);
-	Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move);
+	Evaluation positionEvaluationCB (State state);
+	List<Move> getMovesCB (State state);
+	Board makeMoveCB (State state, Move move);
 	boolean terminalTestCB(State state);
 }
