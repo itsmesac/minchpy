@@ -18,4 +18,11 @@ public class ChessBoard extends Board {
 		}
 		return instance;
 	}
+
+	@Override
+	protected ChessBoard clone() throws CloneNotSupportedException {
+		ChessBoard chessBoardClone = new ChessBoard();
+		//FIXME: add clone implementation here
+		return chessBoardClone;
+	}
 }

@@ -2,6 +2,7 @@ package minchpy.impl;
 
 import java.util.List;
 
+import minchpy.entity.ABState;
 import minchpy.entity.Board;
 import minchpy.entity.Evaluation;
 import minchpy.entity.GameCBS;
@@ -23,13 +24,13 @@ public class ChessCBS extends GameCBS {
 	}
 
 	@Override
-	public Board makeMoveCB(State state, Move move) {
+	public State makeMoveCB(State state, Move move) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean terminalTestCB(State state) {
+	public boolean terminalTestCB(ABState abState) {
 		// TODO Auto-generated method stub
 		return false;
 	}

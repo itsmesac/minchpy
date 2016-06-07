@@ -1,5 +1,8 @@
 package minchpy.entity;
 
-public class Board {
-	//TODO: implement Board class
+public abstract class Board {
+
+	@Override
+	protected abstract Board clone() throws CloneNotSupportedException;
+	
 }

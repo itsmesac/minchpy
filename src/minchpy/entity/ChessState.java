@@ -19,4 +19,12 @@ public class ChessState extends State {
 	public void setCurrentPlayer(Player currentPlayer) {
 		this.currentPlayer = currentPlayer;
 	}
+
+	@Override
+	public State clone() throws CloneNotSupportedException {
+		ChessState chessStateClone = new ChessState();
+		chessStateClone.setCurrentPosition(this.getCurrentPosition().clone());
+		chessStateClone.setCurrentPlayer(this.getCurrentPlayer().clone());
+		return chessStateClone;
+	}
 }
