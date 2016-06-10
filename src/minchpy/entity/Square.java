@@ -1,15 +1,13 @@
 package minchpy.entity;
 
-import minchpy.api.PieceMoves;
-
 public class Square {
-	PieceMoves piece;
+	Piece piece;
 	
-	public PieceMoves getPiece() {
+	public Piece getPiece() {
 		return piece;
 	}
 
-	public void setPiece(PieceMoves piece) {
+	public void setPiece(Piece piece) {
 		this.piece = piece;
 	}
 
