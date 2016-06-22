@@ -22,8 +22,9 @@ public class King extends Piece implements PieceMoves{
 	public List<Move> getAllMoves(State state, int rank, int file) {
 		List<Move> moves = new ArrayList<Move>();
 		//TODO Include castling option
+		//TODO remove instanceof validation
 		if((state instanceof ChessState) && (((ChessState) state).getCurrentPlayer().getPlayer() == side)){
-			Board board = ((ChessState) state).getCurrentPosition();
+			Board board = ((ChessState) state).getCurrentBoard();
 			if(board instanceof ChessBoard) {
 				ChessBoard chessBoard = (ChessBoard) board;
 				if(((rank) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && !isAttacked(state, rank, file + 1) && (chessBoard.getSquareOfBoard(rank, file + 1).isEmpty())) {

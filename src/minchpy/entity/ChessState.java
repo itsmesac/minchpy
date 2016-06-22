@@ -1,25 +1,25 @@
 package minchpy.entity;
 
 public class ChessState extends State {
-	private Board currentPosition;
+	private Board currentBoard;
 	private Player currentPlayer;
 	
 	public ChessState() {
 		super();
 	}
 
-	public ChessState(Board currentPosition, Player currentPlayer) {
+	public ChessState(Board currentBoard, Player currentPlayer) {
 		super();
-		this.currentPosition = currentPosition;
+		this.currentBoard = currentBoard;
 		this.currentPlayer = currentPlayer;
 	}
 
-	public Board getCurrentPosition() {
-		return currentPosition;
+	public Board getCurrentBoard() {
+		return currentBoard;
 	}
 	
-	public void setCurrentPosition(Board currentPosition) {
-		this.currentPosition = currentPosition;
+	public void setCurrentBoard(Board currentBoard) {
+		this.currentBoard = currentBoard;
 	}
 	
 	public Player getCurrentPlayer() {
@@ -33,7 +33,7 @@ public class ChessState extends State {
 	@Override
 	public State clone() throws CloneNotSupportedException {
 		ChessState chessStateClone = new ChessState();
-		chessStateClone.setCurrentPosition(this.getCurrentPosition().clone());
+		chessStateClone.setCurrentBoard(this.getCurrentBoard().clone());
 		chessStateClone.setCurrentPlayer(this.getCurrentPlayer().clone());
 		return chessStateClone;
 	}
