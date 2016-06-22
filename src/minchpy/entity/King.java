@@ -24,6 +24,10 @@ public class King extends Piece implements PieceMoves{
 		//TODO Include castling option
 		//TODO remove instanceof validation
 		//TODO remove isEmpty for all - check if king is attacking
+		/* TODO last condition in all the 'ifs' should be like 
+			 (chessBoard.getSquareOfBoard(rank, file + 1).isEmpty() || 
+			 chessBoard.getSquareOfBoard(rank, file + 1).isOpposition())
+		 */
 		if((state instanceof ChessState) && (((ChessState) state).getCurrentPlayer().getPlayer() == side)){
 			Board board = ((ChessState) state).getCurrentBoard();
 			if(board instanceof ChessBoard) {
