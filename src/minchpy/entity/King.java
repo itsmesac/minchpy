@@ -23,6 +23,7 @@ public class King extends Piece implements PieceMoves{
 		List<Move> moves = new ArrayList<Move>();
 		//TODO Include castling option
 		//TODO remove instanceof validation
+		//TODO remove isEmpty for all - check if king is attacking
 		if((state instanceof ChessState) && (((ChessState) state).getCurrentPlayer().getPlayer() == side)){
 			Board board = ((ChessState) state).getCurrentBoard();
 			if(board instanceof ChessBoard) {
