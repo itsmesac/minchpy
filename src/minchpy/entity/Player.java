@@ -17,5 +17,14 @@ public class Player {
 	public void setPlayer(int player) {
 		this.player = player;
 	}
+
+	public Player(int player) {
+		super();
+		this.player = player;
+	}
+
+	public Player() {
+		super();
+	}
 	
 }

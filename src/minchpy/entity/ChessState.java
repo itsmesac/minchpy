@@ -4,6 +4,16 @@ public class ChessState extends State {
 	private Board currentPosition;
 	private Player currentPlayer;
 	
+	public ChessState() {
+		super();
+	}
+
+	public ChessState(Board currentPosition, Player currentPlayer) {
+		super();
+		this.currentPosition = currentPosition;
+		this.currentPlayer = currentPlayer;
+	}
+
 	public Board getCurrentPosition() {
 		return currentPosition;
 	}
@@ -27,4 +37,5 @@ public class ChessState extends State {
 		chessStateClone.setCurrentPlayer(this.getCurrentPlayer().clone());
 		return chessStateClone;
 	}
+	
 }

@@ -8,8 +8,11 @@ public class Queen extends Piece implements PieceMoves{
 	Queen(int side) {
 		super(side);
 	}
-	
-	public List<Move> getAllMoves() {
+
+	@Override
+	public List<Move> getAllMoves(State state, int rank, int file) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+	
 }
