@@ -17,9 +17,9 @@ public class Bishop extends Piece implements PieceMoves {
 		if (((ChessState) state).getCurrentPlayer().getPlayer() == side) {
 			Board board = ((ChessState) state).getCurrentBoard();
 			ChessBoard chessBoard = (ChessBoard) board;
-			int[][] diagonals = { Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
+			int[][] directions = { Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
 					Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION };
-			for (int[] direction : diagonals) {
+			for (int[] direction : directions) {
 				int nextMoveRank = rank + direction[Constants.X];
 				int nextMoveFile = file + direction[Constants.Y];
 				while((nextMoveRank >= 0) && (nextMoveRank < Constants.MAX_RANKS) && (nextMoveFile >= 0) && (nextMoveFile < Constants.MAX_FILES)) {
