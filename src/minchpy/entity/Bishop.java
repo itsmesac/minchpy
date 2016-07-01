@@ -17,26 +17,26 @@ public class Bishop extends Piece implements PieceMoves {
 		if (((ChessState) state).getCurrentPlayer().getPlayer() == side) {
 			Board board = ((ChessState) state).getCurrentBoard();
 			ChessBoard chessBoard = (ChessBoard) board;
-			int[][] diagnols = { Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
+			int[][] diagonals = { Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
 					Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION };
-			for (int[] direction : diagnols) {
+			for (int[] direction : diagonals) {
 				int nextMoveRank = rank + direction[Constants.X];
 				int nextMoveFile = file + direction[Constants.Y];
-				while((nextMoveRank < Constants.MAX_RANKS) && (nextMoveFile < Constants.MAX_FILES)) {
-					if(!chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile).isEmpty()) {
-						int nextMoveSquarePeicePlayer = chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile).getPiece().getSide();
-						if(nextMoveSquarePeicePlayer == this.side) {
-							break;
-						} else {
-							ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile));
+				while((nextMoveRank >= 0) && (nextMoveRank < Constants.MAX_RANKS) && (nextMoveFile >= 0) && (nextMoveFile < Constants.MAX_FILES)) {
+					Square nextPossibleMoveSquare = chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile);
+					if(!nextPossibleMoveSquare.isEmpty()) {
+						int nextMoveSquarePiecePlayer = nextPossibleMoveSquare.getPiece().getSide();
+						if(nextMoveSquarePiecePlayer != this.side) {
+							ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), nextPossibleMoveSquare);
 							moves.add(move);
-							break;
 						}
+						break;
+					} else {
+						ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), nextPossibleMoveSquare);
+						moves.add(move);
+						nextMoveRank = nextMoveRank + direction[Constants.X];
+						nextMoveFile = nextMoveFile + direction[Constants.Y];
 					}
-					ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile));
-					moves.add(move);
-					nextMoveRank = nextMoveRank + direction[Constants.X];
-					nextMoveFile = nextMoveFile + direction[Constants.Y];
 				}
 			}
 		}

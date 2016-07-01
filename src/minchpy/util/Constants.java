@@ -86,6 +86,11 @@ public class Constants {
     public static final int H7 = (H * MAX_FILES) + 6;
     public static final int H8 = (H * MAX_FILES) + 7;
     
+    public static final int[] TOP_DIRECTION = {1, 0};
+    public static final int[] BOTTOM_DIRECTION = {-1, 0};
+    public static final int[] LEFT_DIRECTION = {0, -1};
+    public static final int[] RIGHT_DIRECTION = {0, 1};
+    
     public static final int[] TOP_RIGHT_DIRECTION = {-1, 1};
     public static final int[] TOP_LEFT_DIRECTION = {-1, -1};
     public static final int[] BOTTOM_RIGHT_DIRECTION = {1, 1};

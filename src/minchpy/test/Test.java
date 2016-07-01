@@ -8,6 +8,7 @@ import minchpy.entity.ChessState;
 import minchpy.entity.King;
 import minchpy.entity.Move;
 import minchpy.entity.Player;
+import minchpy.entity.Rook;
 
 public class Test {
 
@@ -28,6 +29,10 @@ public class Test {
 		chessBoard.setPeiceOnSquare(2, 6, oppositePlayerBishop);
 		List<Move> bishopMoves = bishop.getAllMoves(chessState, 4, 4);
 		System.out.println(bishopMoves.size());
+		Rook rook = new Rook(0);
+		chessBoard.setPeiceOnSquare(0, 0, rook);
+		List<Move> rookMoves = rook.getAllMoves(chessState, 0, 0);
+		System.out.println(rookMoves.size());
 	}
 
 }
