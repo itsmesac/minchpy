@@ -2,6 +2,9 @@ package minchpy.util;
 
 public class Constants {
 	
+	public static final int WHITE = 0;
+	public static final int BLACK = 1;
+	
     public static final int MAX_FILES = 8;
     public static final int MAX_RANKS = 8;
     
@@ -91,10 +94,10 @@ public class Constants {
     public static final int[] LEFT_DIRECTION = {0, -1};
     public static final int[] RIGHT_DIRECTION = {0, 1};
     
-    public static final int[] TOP_RIGHT_DIRECTION = {-1, 1};
-    public static final int[] TOP_LEFT_DIRECTION = {-1, -1};
-    public static final int[] BOTTOM_RIGHT_DIRECTION = {1, 1};
-    public static final int[] BOTTOM_LEFT_DIRECTION = {1, -1};
+    public static final int[] TOP_RIGHT_DIRECTION = {1, 1};
+    public static final int[] TOP_LEFT_DIRECTION = {1, -1};
+    public static final int[] BOTTOM_RIGHT_DIRECTION = {-1, 1};
+    public static final int[] BOTTOM_LEFT_DIRECTION = {-1, -1};
     
     public static final int X = 0;
     public static final int Y = 1;

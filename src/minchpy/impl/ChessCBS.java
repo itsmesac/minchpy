@@ -23,6 +23,7 @@ public class ChessCBS extends GameCBS {
 		return null;
 	}
 
+	//Include condition for firstMove entry for pawn and king
 	@Override
 	public State makeMoveCB(State state, Move move) {
 		// TODO Auto-generated method stub
