@@ -101,4 +101,14 @@ public class Constants {
     
     public static final int X = 0;
     public static final int Y = 1;
+    
+    public static final int[] KNIGHT_TOP_RIGHT_DIRECTION_1 = {2, 1};
+    public static final int[] KNIGHT_TOP_RIGHT_DIRECTION_2 = {1, 2};
+    public static final int[] KNIGHT_TOP_LEFT_DIRECTION_1 = {2, -1};
+    public static final int[] KNIGHT_TOP_LEFT_DIRECTION_2 = {1, -2};
+    public static final int[] KNIGHT_BOTTOM_RIGHT_DIRECTION_1 = {-2, 1};
+    public static final int[] KNIGHT_BOTTOM_RIGHT_DIRECTION_2 = {-1, 2};
+    public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_1 = {-2, -1};
+    public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_2 = {-1, -2};
+    
 }
