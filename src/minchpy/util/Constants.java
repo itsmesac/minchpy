@@ -111,4 +111,10 @@ public class Constants {
     public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_1 = {-2, -1};
     public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_2 = {-1, -2};
     
+    public static final int EVAL_KING 	= 999999;
+    public static final int EVAL_QUEEN 	= 9;
+    public static final int EVAL_ROOK 	= 5;
+    public static final int EVAL_BISHOP = 3;
+    public static final int EVAL_KNIGHT = 3;
+    public static final int EVAL_PAWN 	= 1;
 }
