@@ -51,7 +51,7 @@ public class MinchPy {
 	//updates mp.st after playing the move
 	private void getPlayerMove(Scanner in) {
 		// get move from in
-	    // validate move
+	    // validate move (support - in check cond; no support - castling, en passant, promotion)
 		// if valid, play move and update mp.st and return
 		// else do step 1
 	}
