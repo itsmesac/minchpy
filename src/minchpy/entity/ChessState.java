@@ -62,9 +62,37 @@ public class ChessState extends State {
 		ChessState chessStateClone = new ChessState();
 		chessStateClone.setCurrentBoard(this.getCurrentBoard().clone());
 		chessStateClone.setCurrentPlayer(this.getCurrentPlayer().clone());
-		chessStateClone.setCurrentEval(this.getCurrentEval().clone());
+		//chessStateClone.setCurrentEval(this.getCurrentEval().clone());
 		
 		return chessStateClone;
-	}
-	
+    }
+
+    /*
+     * General guidelines for static evaluation
+     *
+     * Priority Order:
+     * 1 : King Safety
+     *     - King at the corner, protected by pawns in front is safe
+     *     - An open file near the king + the presence of opposite Rooks / Queen is unsafe
+     *     - An open diagonal near the king + the presence of opposite Queen / Bishop + 
+     *       absence of own similar colored bishop is unsafe
+     *     - King tied to the defense of a piece / pawn are thus inactive is weak (in  the endgame)
+     * 2 : Material
+     * 3 : Center Control
+     *     - More pawns in the center is strong
+     * 4 : Activity of pieces
+     *     - Exposed queen in early stages if the game is a weakness
+     *     - Knights at the center is strong generally
+     *     - Bishops blocked by own pieces are not strong
+     *     - Rooks in open files are strong
+     *     - A centralized king in the endgame is strong
+     * 5 : Pawn Structure
+     *     - Doubled pawns are weak
+     *     - Isolated pawns are weak
+     *     - Passed pawns are strong
+     *     - Passed pawns supported by a pawn / pawns are strong
+     *     - 
+     */
+    public void evaluate() {
+    }
 }
