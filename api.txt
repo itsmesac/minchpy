@@ -1,7 +1,7 @@
 interface GenericCBS {
-	Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer);
-	List<Move> getMovesCB (Board currentPosition, Player currentPlayer);
-	Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move);
+    Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer);
+    List<Move> getMovesCB (Board currentPosition, Player currentPlayer);
+    Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move);
 }
 
 class GameCBS {
@@ -9,24 +9,24 @@ class GameCBS {
 }
 
 class ChessCBS extends GameCBS implements GenericCBS {
-	Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer) {
-		return null;
-	}
-	
-	List<Move> getMovesCB (Board currentPosition, Player currentPlayer) {
-		return null;
-	}
-	
-	Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move) {
-		return null;
-	}
+    Evaluation positionEvaluationCB (Board currentPosition, Player currentPlayer) {
+        return null;
+    }
+    
+    List<Move> getMovesCB (Board currentPosition, Player currentPlayer) {
+        return null;
+    }
+    
+    Board makeMoveCB (Board currentPosition, Player currentPlayer, Move move) {
+        return null;
+    }
 }
 
 class AlphaBetaPruningAlgorithm  {
-	
-	MoveEval alphaBetaPruningAlgorithm(GameCBS g, Board currentPosition, Depth depth, Player currentPlayer) {
-    	return null;
-	}
+    
+    MoveEval alphaBetaPruningAlgorithm(GameCBS g, Board currentPosition, Depth depth, Player currentPlayer) {
+        return null;
+    }
 }
 
 1
