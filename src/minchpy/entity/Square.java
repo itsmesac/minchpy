@@ -10,6 +10,10 @@ public class Square {
 	public void setPiece(Piece piece) {
 		this.piece = piece;
 	}
+	
+	public void resetPiece() {
+		this.piece = null;
+	}
 
 	public Square() {
 		piece = null;

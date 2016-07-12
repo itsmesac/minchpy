@@ -11,4 +11,8 @@ public class Piece{
 		return side;
 	}
 	
+	public void updateAfterMove() {
+		
+	}
+	
 }

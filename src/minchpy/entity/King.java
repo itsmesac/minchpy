@@ -9,13 +9,21 @@ import minchpy.util.Constants;
 
 public class King extends Piece implements PieceMoves{
 	
+	boolean isFirstMove; //for castling
+	
 	public King(int side) {
 		super(side);
+		isFirstMove = true;
 	}
 	
 	public boolean isAttacked(State state, int rank, int file) {
 		//TODO: implement the function
 		return false;
+	}
+	
+	@Override
+	public void updateAfterMove() {
+		isFirstMove = false;
 	}
 
 	@Override

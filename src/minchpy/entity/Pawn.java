@@ -14,6 +14,13 @@ public class Pawn extends Piece implements PieceMoves {
 		super(side);
 		isFirstMove = true;
 	}
+	
+
+	@Override
+	public void updateAfterMove() {
+		isFirstMove = false;
+	}
+
 
 	@Override
 	public List<Move> getAllMoves(State state, int rank, int file) {

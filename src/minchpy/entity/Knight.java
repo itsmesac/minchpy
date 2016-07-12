@@ -7,7 +7,7 @@ import minchpy.util.Constants;
 
 public class Knight extends Piece implements PieceMoves {
 
-	Knight(int side) {
+	public Knight(int side) {
 		super(side);
 	}
 
