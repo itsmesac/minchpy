@@ -11,7 +11,7 @@ public class DisplayConstants {
     public static final String BLACK_ROOK = "\u265C";
     public static final String BLACK_KNIGHT = "\u265E";
     public static final String BLACK_BISHOP = "\u265D";
-    public static final String BLACK_QUEEN = "\u265A";
-    public static final String BLACK_KING = "\u265B";
+    public static final String BLACK_QUEEN = "\u265B";
+    public static final String BLACK_KING = "\u265A";
     public static final String BLACK_PAWN = "\u265F";
 }
