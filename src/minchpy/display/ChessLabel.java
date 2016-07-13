@@ -8,7 +8,7 @@ import javax.swing.SwingConstants;
 
 public class ChessLabel extends JLabel {
 
-    Font font     = new Font("Ariel", Font.PLAIN, 36);
+    Font font     = new Font("Ariel", Font.PLAIN, 48);
     Color bgLight = new Color(222, 184, 135);
     Color bgDark  = new Color(139, 69, 19);
 
