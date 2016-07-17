@@ -48,4 +48,7 @@ public class Knight extends Piece {
         }
         return moves;
     }
+    public boolean isPieceAttackedIfMoveIsPlayed(State state, Move move) {
+        return false;
+    }
 }

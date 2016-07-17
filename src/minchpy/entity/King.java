@@ -6,27 +6,27 @@ import java.util.List;
 
 import minchpy.util.Constants;
 
-public class King extends Piece{
-    
-    boolean isFirstMove; //for castling
-    
+public class King extends Piece {
+
+    boolean isFirstMove; // for castling
+
     public King(int side) {
         super(side);
         isFirstMove = true;
-        movementDirections = Arrays.asList(Constants.TOP_DIRECTION, Constants.BOTTOM_DIRECTION, Constants.LEFT_DIRECTION,
-                Constants.RIGHT_DIRECTION, Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
-                Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION);
+        movementDirections = Arrays.asList(Constants.TOP_DIRECTION, Constants.BOTTOM_DIRECTION,
+                Constants.LEFT_DIRECTION, Constants.RIGHT_DIRECTION, Constants.TOP_LEFT_DIRECTION,
+                Constants.TOP_RIGHT_DIRECTION, Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION);
     }
-    
-    public boolean isAttacked(State state, int rank, int file) {
-        //TODO: implement the function
+
+    public boolean isPieceAttackedIfMoveIsPlayed(State state, Move move) {
+        // TODO: implement the function
         return false;
     }
-    
+
     @Override
     public void updateAfterMove() {
-    	if(isFirstMove)
-    		isFirstMove = false;
+        if (isFirstMove)
+            isFirstMove = false;
     }
 
     @Override
@@ -43,41 +43,65 @@ public class King extends Piece{
             Board board = ((ChessState) state).getCurrentBoard();
             if(board instanceof ChessBoard) {
                 ChessBoard chessBoard = (ChessBoard) board;
-                if(((rank) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && !isAttacked(state, rank, file + 1) && (chessBoard.getSquareOfBoard(rank, file + 1).isEmpty())) {
+                if(((rank) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank, file + 1).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank, file + 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank, file + 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank - 1) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && !isAttacked(state, rank - 1, file + 1) && (chessBoard.getSquareOfBoard(rank - 1, file + 1).isEmpty())) {
+                if(((rank - 1) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank - 1, file + 1).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank - 1, file + 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank - 1, file + 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank - 1) < Constants.MAX_FILES) && ((file) < Constants.MAX_RANKS) && !isAttacked(state, rank - 1, file) && (chessBoard.getSquareOfBoard(rank - 1, file).isEmpty())) {
+                if(((rank - 1) < Constants.MAX_FILES) && ((file) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank - 1, file).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank - 1, file).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank - 1, file));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank - 1) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && !isAttacked(state, rank - 1, file - 1) && (chessBoard.getSquareOfBoard(rank - 1, file - 1).isEmpty())) {
+                if(((rank - 1) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank - 1, file - 1).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank - 1, file - 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank - 1, file - 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && !isAttacked(state, rank, file - 1) && (chessBoard.getSquareOfBoard(rank, file - 1).isEmpty())) {
+                if(((rank) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank, file - 1).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank, file - 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank, file - 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank + 1) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && !isAttacked(state, rank + 1, file - 1) && (chessBoard.getSquareOfBoard(rank + 1, file - 1).isEmpty())) {
+                if(((rank + 1) < Constants.MAX_FILES) && ((file - 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank + 1, file - 1).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank + 1, file - 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank + 1, file - 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank + 1) < Constants.MAX_FILES) && ((file) < Constants.MAX_RANKS) && !isAttacked(state, rank + 1, file) && (chessBoard.getSquareOfBoard(rank + 1, file).isEmpty())) {
+                if(((rank + 1) < Constants.MAX_FILES) && ((file) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank + 1, file).isEmpty() || 
+                        chessBoard.getSquareOfBoard(rank + 1, file).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank + 1, file));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
-                if(((rank + 1) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && !isAttacked(state, rank + 1, file + 1) && (chessBoard.getSquareOfBoard(rank + 1, file + 1).isEmpty())) {
+                if(((rank + 1) < Constants.MAX_FILES) && ((file + 1) < Constants.MAX_RANKS) && (chessBoard.getSquareOfBoard(rank + 1, file + 1).isEmpty()  || 
+                        chessBoard.getSquareOfBoard(rank + 1, file + 1).getPiece().getSide() != side)) {
                     ChessMove move = new ChessMove(chessBoard.getSquareOfBoard(rank, file), chessBoard.getSquareOfBoard(rank + 1, file + 1));
-                    moves.add(move);
+                    if (!this.isPieceAttackedIfMoveIsPlayed(state, move)) {
+                        moves.add(move);
+                    }
                 }
             }
         }
         return moves;
     }
-    
+
 }

@@ -24,5 +24,7 @@ public abstract class Piece implements PieceMoves{
     public void updateAfterMove() {
         
     }
-    
+    public boolean isPieceAttackedIfMoveIsPlayed(State state, Move move) {
+        return false;
+    }
 }
