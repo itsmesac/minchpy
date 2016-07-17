@@ -30,8 +30,7 @@ public class Pawn extends Piece {
     public List<Move> getAllMoves(State state, int rank, int file) {
         List<Move> moves = new ArrayList<Move>();
         if (((ChessState) state).getCurrentPlayer().getPlayer() == side) {
-            Board board = ((ChessState) state).getCurrentBoard();
-            ChessBoard chessBoard = (ChessBoard) board;
+            ChessBoard chessBoard = ((ChessState) state).getCurrentBoard();
             int[] pieceMovementDirection;
             if (this.side == Constants.WHITE)
                 pieceMovementDirection = Constants.TOP_DIRECTION;

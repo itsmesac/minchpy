@@ -18,8 +18,7 @@ public class Bishop extends Piece {
     public List<Move> getAllMoves(State state, int rank, int file) {
         List<Move> moves = new ArrayList<Move>();
         if (((ChessState) state).getCurrentPlayer().getPlayer() == side) {
-            Board board = ((ChessState) state).getCurrentBoard();
-            ChessBoard chessBoard = (ChessBoard) board;
+            ChessBoard chessBoard = ((ChessState) state).getCurrentBoard();
             for (int[] direction : movementDirections) {
                 int nextMoveRank = rank + direction[Constants.X];
                 int nextMoveFile = file + direction[Constants.Y];

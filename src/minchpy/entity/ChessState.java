@@ -1,7 +1,7 @@
 package minchpy.entity;
 
 public class ChessState extends State {
-    private Board currentBoard;
+    private ChessBoard currentBoard;
     private Player currentPlayer;
     private Evaluation currentEval;
     
@@ -20,7 +20,7 @@ public class ChessState extends State {
         this.currentEval = new Evaluation();
     }
     
-    public ChessState(Board currentBoard) {
+    public ChessState(ChessBoard currentBoard) {
         super();
         this.currentBoard = currentBoard;
         this.currentPlayer = new Player();
@@ -34,18 +34,18 @@ public class ChessState extends State {
         this.currentEval = new Evaluation();
     }
     
-    public ChessState(Board currentBoard, Player currentPlayer) {
+    public ChessState(ChessBoard currentBoard, Player currentPlayer) {
         super();
         this.currentBoard = currentBoard;
         this.currentPlayer = currentPlayer;
         this.currentEval = new Evaluation();
     }
 
-    public Board getCurrentBoard() {
+    public ChessBoard getCurrentBoard() {
         return currentBoard;
     }
     
-    public void setCurrentBoard(Board currentBoard) {
+    public void setCurrentBoard(ChessBoard currentBoard) {
         this.currentBoard = currentBoard;
     }
     

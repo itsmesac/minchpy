@@ -48,40 +48,6 @@ public class ChessMove extends Move {
                 break;
             }
         }
-            
-//        } else {
-//            isValidMove = true;
-//            boolean hasManyMovesInOneDirection = false;
-//            List<int[]> directions = src.getPiece().getMovementDirections();
-//            if ((src.getPiece() instanceof Bishop) || (src.getPiece() instanceof Queen)
-//                    || (src.getPiece() instanceof Rook)) {
-//                hasManyMovesInOneDirection = true;
-//            } else if ((src.getPiece() instanceof King) || (src.getPiece() instanceof Knight)) {
-//                hasManyMovesInOneDirection = false;
-//            }
-//            for (int[] direction : directions) {
-//                int nexValidMoveRank = currentRank + direction[Constants.X];
-//                int nexValidMoveFile = currentFile + direction[Constants.Y];
-//                do {
-//                    if ((nexValidMoveRank >= 0) && (nexValidMoveRank < Constants.MAX_RANKS) && (nexValidMoveFile >= 0)
-//                            && (nexValidMoveFile < Constants.MAX_FILES)) {
-//                        if ((nextMoveRank == nexValidMoveRank) && (nextMoveFile == nexValidMoveFile)) {
-//                            isValidMove = true;
-//                            ChessBoard chessBoard = (ChessBoard) ((ChessState) state).getCurrentBoard();
-//                            Square nextPossibleMoveSquare = chessBoard.getSquareOfBoard(nextMoveRank, nextMoveFile);
-//                            if (!nextPossibleMoveSquare.isEmpty()) {
-//                                int nextMoveSquarePiecePlayer = nextPossibleMoveSquare.getPiece().getSide();
-//                                if (nextMoveSquarePiecePlayer == src.getPiece().getSide()) {
-//                                    isValidMove = false;
-//                                }
-//                            }
-//                            break;
-//                        }
-//                        nexValidMoveRank = nexValidMoveRank + direction[Constants.X];
-//                        nexValidMoveFile = nexValidMoveFile + direction[Constants.Y];
-//                    }
-//                } while (hasManyMovesInOneDirection);
-//            }
         return isValidMove;
     }
 }
