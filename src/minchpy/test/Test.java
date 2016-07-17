@@ -18,7 +18,7 @@ public class Test {
         ChessState chessState = new ChessState(chessBoard, new Player(Constants.WHITE));
         List<Move> pawnMoves = ((Pawn)chessBoard.getSquareOfBoard("E2").getPiece()).getAllMoves(chessState, 1, Constants.E);
         ChessCBS cbs = new ChessCBS();
-        cbs.makeMoveCB(chessState, pawnMoves.get(0));
+        cbs.makeMoveCB(chessState, pawnMoves.get(1));
         BoardDisplay board = new BoardDisplay(chessBoard);
         board.display();
 //        King king = new King(Constants.WHITE);
