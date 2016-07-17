@@ -1,7 +1,17 @@
 package minchpy.entity;
 
-public class Piece{
-    public int side;
+import java.util.List;
+
+import minchpy.api.PieceMoves;
+
+public abstract class Piece implements PieceMoves{
+    protected int side;
+    
+    protected List<int[]> movementDirections = null;
+    
+    public List<int[]> getMovementDirections() {
+        return movementDirections;
+    }
     
     Piece (int side) {
         this.side = side;

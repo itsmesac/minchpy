@@ -32,7 +32,7 @@ public class ChessCBS extends GameCBS {
         Square dest = ((ChessMove)move).getDst();
         if(!src.isEmpty()) {
             Piece piece = src.getPiece();
-            src.resetPiece();
+            src.clear();
             dest.setPiece(piece);
             piece.updateAfterMove();
         }

@@ -1,19 +1,21 @@
 package minchpy.entity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-
-import minchpy.api.PieceMoves;
 
 import minchpy.util.Constants;
 
-public class King extends Piece implements PieceMoves{
+public class King extends Piece{
     
     boolean isFirstMove; //for castling
     
     public King(int side) {
         super(side);
         isFirstMove = true;
+        movementDirections = Arrays.asList(Constants.TOP_DIRECTION, Constants.BOTTOM_DIRECTION, Constants.LEFT_DIRECTION,
+                Constants.RIGHT_DIRECTION, Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
+                Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION);
     }
     
     public boolean isAttacked(State state, int rank, int file) {
@@ -23,7 +25,8 @@ public class King extends Piece implements PieceMoves{
     
     @Override
     public void updateAfterMove() {
-        isFirstMove = false;
+    	if(isFirstMove)
+    		isFirstMove = false;
     }
 
     @Override

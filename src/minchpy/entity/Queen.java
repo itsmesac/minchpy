@@ -1,15 +1,20 @@
 package minchpy.entity;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import minchpy.api.PieceMoves;
+
 import minchpy.util.Constants;
 
-public class Queen extends Piece implements PieceMoves {
-
+public class Queen extends Piece{
+    
     public Queen(int side) {
         super(side);
+        movementDirections = Arrays.asList(Constants.TOP_DIRECTION, Constants.BOTTOM_DIRECTION, Constants.LEFT_DIRECTION,
+                Constants.RIGHT_DIRECTION, Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
+                Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION);
     }
+    
 
     @Override
     public List<Move> getAllMoves(State state, int rank, int file) {
@@ -17,10 +22,7 @@ public class Queen extends Piece implements PieceMoves {
         if (((ChessState) state).getCurrentPlayer().getPlayer() == side) {
             Board board = ((ChessState) state).getCurrentBoard();
             ChessBoard chessBoard = (ChessBoard) board;
-            int[][] directions = { Constants.TOP_DIRECTION, Constants.BOTTOM_DIRECTION, Constants.LEFT_DIRECTION,
-                    Constants.RIGHT_DIRECTION, Constants.TOP_LEFT_DIRECTION, Constants.TOP_RIGHT_DIRECTION,
-                    Constants.BOTTOM_LEFT_DIRECTION, Constants.BOTTOM_RIGHT_DIRECTION };
-            for (int[] direction : directions) {
+            for (int[] direction : movementDirections) {
                 int nextMoveRank = rank + direction[Constants.X];
                 int nextMoveFile = file + direction[Constants.Y];
                 while ((nextMoveRank >= 0) && (nextMoveRank < Constants.MAX_RANKS) && (nextMoveFile >= 0)

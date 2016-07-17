@@ -3,10 +3,9 @@ package minchpy.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import minchpy.api.PieceMoves;
 import minchpy.util.Constants;
 
-public class Pawn extends Piece implements PieceMoves {
+public class Pawn extends Piece {
 
     boolean isFirstMove;
 
@@ -18,7 +17,12 @@ public class Pawn extends Piece implements PieceMoves {
 
     @Override
     public void updateAfterMove() {
-        isFirstMove = false;
+    	if(isFirstMove)
+    		isFirstMove = false;
+    }
+    
+    public List<int[]> getMovementDirections() {
+        return null;
     }
 
 

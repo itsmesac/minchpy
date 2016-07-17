@@ -48,7 +48,7 @@ public class ChessBoard extends Board {
         board = new Square[Constants.MAX_FILES][Constants.MAX_RANKS];
         for(int i = 0; i < Constants.MAX_FILES; i++) {
             for(int j = 0; j < Constants.MAX_RANKS; j++) {
-                board[i][j] = new Square();
+                board[i][j] = new Square(i, j);
             }
         }
         initializePieces(Constants.WHITE);

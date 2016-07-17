@@ -34,37 +34,37 @@ public class BoardDisplay extends JFrame {
                 else {
                     Piece piece = chessBoard[i][j].getPiece();
                     if (piece instanceof Rook) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_ROOK);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_ROOK);
                     }
                     if (piece instanceof Knight) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_KNIGHT);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_KNIGHT);
                     }
                     if (piece instanceof Bishop) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_BISHOP);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_BISHOP);
                     }
                     if (piece instanceof King) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_KING);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_KING);
                     }
                     if (piece instanceof Queen) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_QUEEN);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_QUEEN);
                     }
                     if (piece instanceof Pawn) {
-                        if(piece.side == Constants.WHITE)
+                        if(piece.getSide() == Constants.WHITE)
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.WHITE_PAWN);
                         else
                             labels[chessLabelIndex--] = new ChessLabel(DisplayConstants.BLACK_PAWN);

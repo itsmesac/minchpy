@@ -2,7 +2,17 @@ package minchpy.entity;
 
 public class Square {
     Piece piece;
+    final int rank;
+    final int file;
     
+    public int getRank() {
+        return rank;
+    }
+
+    public int getFile() {
+        return file;
+    }
+
     public Piece getPiece() {
         return piece;
     }
@@ -11,12 +21,14 @@ public class Square {
         this.piece = piece;
     }
     
-    public void resetPiece() {
+    public void clear() {
         this.piece = null;
     }
 
-    public Square() {
+    public Square(int rank, int file) {
         piece = null;
+        this.rank = rank;
+        this.file = file;
     }
     
     public boolean isEmpty() {
