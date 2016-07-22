@@ -99,9 +99,6 @@ public class Constants {
     public static final int[] BOTTOM_RIGHT_DIRECTION = {-1, 1};
     public static final int[] BOTTOM_LEFT_DIRECTION = {-1, -1};
     
-    public static final int X = 0;
-    public static final int Y = 1;
-    
     public static final int[] KNIGHT_TOP_RIGHT_DIRECTION_1 = {2, 1};
     public static final int[] KNIGHT_TOP_RIGHT_DIRECTION_2 = {1, 2};
     public static final int[] KNIGHT_TOP_LEFT_DIRECTION_1 = {2, -1};
@@ -110,6 +107,9 @@ public class Constants {
     public static final int[] KNIGHT_BOTTOM_RIGHT_DIRECTION_2 = {-1, 2};
     public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_1 = {-2, -1};
     public static final int[] KNIGHT_BOTTOM_LEFT_DIRECTION_2 = {-1, -2};
+
+    public static final int X = 0;
+    public static final int Y = 1;
     
     public static final int EVAL_KING     = 999999;
     public static final int EVAL_QUEEN     = 9;
@@ -117,4 +117,7 @@ public class Constants {
     public static final int EVAL_BISHOP = 3;
     public static final int EVAL_KNIGHT = 3;
     public static final int EVAL_PAWN     = 1;
+    
+    public static final String BOOK_TXT = "book.txt";
+    public static final int NUMBER_OF_ENTRIES_IN_BOOK_TXT = 385;
 }
