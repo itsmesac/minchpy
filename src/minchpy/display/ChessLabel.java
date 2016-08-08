@@ -25,4 +25,12 @@ public class ChessLabel extends JLabel {
           setHorizontalAlignment( SwingConstants.CENTER );
     }
 
+    void setRankFile(int idx, int row)
+    {
+        Font font     = new Font("Ariel", Font.PLAIN, 24);
+        setFont(font);
+        setOpaque(false);
+        setBackground((idx+row)%2 != 0 ? bgDark : bgLight);
+        setHorizontalAlignment( SwingConstants.CENTER );
+    }
 }

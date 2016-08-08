@@ -18,13 +18,21 @@ import minchpy.util.Constants;
 
 public class BoardDisplay extends JFrame {
 
-    // Initialise arrays to hold panels and images of the board
-
-    private ChessLabel[] labels = new ChessLabel[Constants.MAX_FILES * Constants.MAX_RANKS]; 
-
+    private ChessLabel[] labels = new ChessLabel[(Constants.MAX_FILES) * (Constants.MAX_RANKS)]; 
+    
+    private ChessLabel[] rankFileValues = new ChessLabel[(Constants.MAX_FILES * 2) + 1];
+    
+    private void initializeRankFileValues() {
+        for(int i = 0; i < Constants.MAX_FILES; i++) {
+            rankFileValues[i] = new ChessLabel(Character.toString((char)('a' + i)));
+            rankFileValues[Constants.MAX_FILES + i + 1] = new ChessLabel(Integer.toString(i + 1));
+        }
+        rankFileValues[Constants.MAX_FILES] = new ChessLabel("*");
+    }
 
     public BoardDisplay(ChessBoard board) 
     {
+        initializeRankFileValues();
         Square[][] chessBoard = board.getBoard();
         int chessLabelIndex = (Constants.MAX_FILES * Constants.MAX_RANKS) - 1;
         for(int i = 0; i < Constants.MAX_FILES; i++) {
@@ -80,18 +88,29 @@ public class BoardDisplay extends JFrame {
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
         Container contentPane = getContentPane();
-        GridLayout gridLayout = new GridLayout(8, 8);
+        GridLayout gridLayout = new GridLayout(9, 9);
 
         contentPane.setLayout(gridLayout);
+        
+        for(int i = 0; i < Constants.MAX_FILES; i++) {
+            rankFileValues[i].setRankFile(i, 0);
+            contentPane.add(rankFileValues[i]);
+        }
 
-        int row = -1;
+        int row = 0;
         for (int i = 0; i < labels.length; i++) {
-            if (i % 8 == 0)
+            if (i % 8 == 0) {
                 row++; // increment row number
+                rankFileValues[Constants.MAX_FILES + (row - 1)].setRankFile(Constants.MAX_FILES + (row - 1), row);
+                contentPane.add(rankFileValues[Constants.MAX_FILES + (row - 1)]);
+            }
             labels[i].set(i, row);
             contentPane.add(labels[i]);
         } // i
-
+        row++;
+        rankFileValues[Constants.MAX_FILES + (row - 1)].setRankFile(Constants.MAX_FILES + (row - 1), row);
+        contentPane.add(rankFileValues[Constants.MAX_FILES + (row - 1)]);
+        
         setSize(600, 600);
         setLocationRelativeTo(null);
         setVisible(true);
