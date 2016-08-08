@@ -28,4 +28,8 @@ public class ABState {
         this.depth = depth;
     }
     
+    public void updateState(State state) {
+        this.state = state;
+        depth.decrementDepth();
+    }
 }

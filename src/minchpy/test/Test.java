@@ -10,6 +10,7 @@ import minchpy.entity.Pawn;
 import minchpy.entity.Player;
 import minchpy.impl.ChessCBS;
 import minchpy.util.Constants;
+import minchpy.util.EvaluationConstants;
 
 public class Test {
 
@@ -34,6 +35,8 @@ public class Test {
         cbs.makeMoveCB(chessState, chessBoard.getSquareOfBoard("E1").getPiece().getAllMoves(chessState, 0, Constants.E).get(3));
         BoardDisplay board = new BoardDisplay(chessBoard);
         board.display();
+        
+        //System.out.println(EvaluationConstants.KING_PIECE_SQUARE_TABLE_MIDDLE_GAME[5][5]);
 
     }
 

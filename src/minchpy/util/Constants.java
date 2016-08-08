@@ -111,13 +111,14 @@ public class Constants {
     public static final int X = 0;
     public static final int Y = 1;
     
-    public static final int EVAL_KING     = 999999;
-    public static final int EVAL_QUEEN     = 9;
-    public static final int EVAL_ROOK     = 5;
-    public static final int EVAL_BISHOP = 3;
-    public static final int EVAL_KNIGHT = 3;
-    public static final int EVAL_PAWN     = 1;
+//    public static final int EVAL_KING     = 999999;
+//    public static final int EVAL_QUEEN     = 9;
+//    public static final int EVAL_ROOK     = 5;
+//    public static final int EVAL_BISHOP = 3;
+//    public static final int EVAL_KNIGHT = 3;
+//    public static final int EVAL_PAWN     = 1;
     
     public static final String BOOK_TXT = "book.txt";
     public static final int NUMBER_OF_ENTRIES_IN_BOOK_TXT = 385;
+    
 }

@@ -12,7 +12,7 @@ import minchpy.entity.State;
 public class AlphaBetaPruningAlgorithm {
     
     //TODO check this value
-    public static int INFINITY = 1000; 
+    public static int INFINITY = 10000000; 
     
     MoveEval minValue(GameCBS g, ABState abState, double alpha, double beta) throws CloneNotSupportedException {
         if(g.terminalTestCB(abState)) {
@@ -26,7 +26,7 @@ public class AlphaBetaPruningAlgorithm {
         for (Move move : moves) {
             ABState updatedABState = abState.clone();
             State stateAfterMove = g.makeMoveCB(updatedABState.getState(), move);
-            updatedABState.setState(stateAfterMove);
+            updatedABState.updateState(stateAfterMove);
             MoveEval nextMoveAndEval = maxValue(g, updatedABState, alpha, beta);
             if(nextMoveAndEval.getValue().getEvalValue() < moveEval.getValue().getEvalValue()) {
                 moveEval.setMove(move);
@@ -52,7 +52,7 @@ public class AlphaBetaPruningAlgorithm {
         for (Move move : moves) {
             ABState updatedABState = abState.clone();
             State stateAfterMove = g.makeMoveCB(updatedABState.getState(), move);
-            updatedABState.setState(stateAfterMove);
+            updatedABState.updateState(stateAfterMove);
             MoveEval nextMoveAndEval = minValue(g, updatedABState, alpha, beta);
             if(nextMoveAndEval.getValue().getEvalValue() > moveEval.getValue().getEvalValue()) {
                 moveEval.setMove(move);
