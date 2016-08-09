@@ -3,10 +3,14 @@ package minchpy.entity;
 public class Depth {
     int depthValue;
     
+    public Depth(int depthValue) {
+        super();
+        this.depthValue = depthValue;
+    }
+
     @Override
     protected Depth clone() throws CloneNotSupportedException {
-        Depth depthClone = new Depth();
-        //TODO implement clone when variables are decided
+        Depth depthClone = new Depth(depthValue);
         return depthClone;
     }
 
@@ -18,8 +22,8 @@ public class Depth {
         this.depthValue = depthValue;
     }
     
-    public void decrementDepth() {
-        this.depthValue--;
+    public void incrementDepth() {
+        this.depthValue++;
     }
 
     @Override

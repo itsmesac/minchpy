@@ -14,7 +14,7 @@ public class AlphaBetaPruningAlgorithm {
     //TODO check this value
     public static int INFINITY = 10000000; 
     
-    MoveEval minValue(GameCBS g, ABState abState, double alpha, double beta) throws CloneNotSupportedException {
+    static MoveEval minValue(GameCBS g, ABState abState, double alpha, double beta) throws CloneNotSupportedException {
         if(g.terminalTestCB(abState)) {
             MoveEval moveEval = new MoveEval(null, g.positionEvaluationCB(abState.getState().clone()));
             return moveEval;
@@ -40,7 +40,7 @@ public class AlphaBetaPruningAlgorithm {
         return moveEval;
     }
     
-    MoveEval maxValue(GameCBS g, ABState abState, double alpha, double beta) throws CloneNotSupportedException {
+    static MoveEval maxValue(GameCBS g, ABState abState, double alpha, double beta) throws CloneNotSupportedException {
         if(g.terminalTestCB(abState)) {
             MoveEval moveEval = new MoveEval(null, g.positionEvaluationCB(abState.getState().clone()));
             return moveEval;
@@ -61,15 +61,15 @@ public class AlphaBetaPruningAlgorithm {
             if(moveEval.getValue().getEvalValue() >= beta) {
                 return moveEval;
             }
-            alpha = Math.min(alpha, moveEval.getValue().getEvalValue());
+            alpha = Math.max(alpha, moveEval.getValue().getEvalValue());
         }
         return moveEval;
     }
     
-    MoveEval alphaBetaSearch(GameCBS g, ABState abState) {
+    public static MoveEval alphaBetaSearch(GameCBS g, ABState abState) {
         MoveEval nextMove = null;
         try {
-            nextMove = maxValue(g, abState, INFINITY, -INFINITY);
+            nextMove = maxValue(g, abState, -INFINITY, INFINITY);
         } catch (CloneNotSupportedException e) {
             System.out.println("Exception: " + e.getMessage());
         }

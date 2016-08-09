@@ -25,7 +25,7 @@ public class BoardDisplay extends JFrame {
     private void initializeRankFileValues() {
         for(int i = 0; i < Constants.MAX_FILES; i++) {
             rankFileValues[i] = new ChessLabel(Character.toString((char)('a' + i)));
-            rankFileValues[Constants.MAX_FILES + i + 1] = new ChessLabel(Integer.toString(i + 1));
+            rankFileValues[Constants.MAX_FILES + i + 1] = new ChessLabel(Integer.toString(Constants.MAX_FILES - i));
         }
         rankFileValues[Constants.MAX_FILES] = new ChessLabel("*");
     }

@@ -4,6 +4,16 @@ public class ABState {
     State state;
     Depth depth;
     
+    public ABState(State state) {
+        super();
+        this.state = state;
+        this.depth = new Depth(0);
+    }
+
+    public ABState() {
+        super();
+    }
+    
     @Override
     public ABState clone() throws CloneNotSupportedException {
         ABState abStateClone = new ABState();
@@ -30,6 +40,6 @@ public class ABState {
     
     public void updateState(State state) {
         this.state = state;
-        depth.decrementDepth();
+        depth.incrementDepth();
     }
 }
